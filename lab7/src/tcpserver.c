@@ -7,9 +7,10 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-#define SERV_PORT 10050
-#define BUFSIZE 100
-#define SADDR struct sockaddr
+//#define SERV_PORT 10050
+//#define BUFSIZE 100
+//#define SADDR struct sockaddr
+
 
 int main() {
   const size_t kSize = sizeof(struct sockaddr_in);
@@ -19,6 +20,8 @@ int main() {
   char buf[BUFSIZE];
   struct sockaddr_in servaddr;
   struct sockaddr_in cliaddr;
+  
+  printf("Server is launching");
 
   if ((lfd = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
     perror("socket");
